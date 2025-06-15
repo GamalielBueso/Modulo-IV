@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 6</title>
+</head>
+<body>
+  <h2>Ejercicio 6</h2>
+  <p id="resultado"></p>
+
+  <script>
+    let n = parseInt(prompt("Introduce el primer número (n):"));
+    let m = parseInt(prompt("Introduce el segundo número (m):"));
+    let cociente = Math.floor(n / m);
+    let resto = n % m;
+    document.getElementById("resultado").innerText =
+      `La división de ${n} entre ${m} da un cociente ${cociente} y un resto ${resto}`;
+  </script>
+</body>
+</html>

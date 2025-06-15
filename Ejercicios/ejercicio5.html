@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5</title>
+</head>
+<body>
+  <h2>Ejercicio 5</h2>
+  <p id="resultado"></p>
+
+  <script>
+    let peso = parseFloat(prompt("Ingresa tu peso en kg:"));
+    let estatura = parseFloat(prompt("Ingresa tu estatura en metros:"));
+    let imc = peso / (estatura * estatura);
+    document.getElementById("resultado").innerText = `Tu índice de masa corporal es ${imc.toFixed(2)}`;
+  </script>
+</body>
+</html>
