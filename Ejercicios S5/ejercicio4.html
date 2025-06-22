@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 4</title>
+</head>
+<body>
+  <h1>Ejercicio 4</h1>
+
+  <label for="valores">Ingrese valores separados por espacios:</label><br>
+  <input type="text" id="valores" placeholder="Ej: 5 7 99 34 54 2 12"><br><br>
+
+  <label for="buscar">Ingrese valor a buscar:</label><br>
+  <input type="text" id="buscar" placeholder="Ej: 54"><br><br>
+
+  <button onclick="buscarValor()">Buscar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function buscarValor() {
+      const valores = document.getElementById("valores").value.trim().split(" ");
+      const buscar = document.getElementById("buscar").value.trim();
+      
+      const encontrado = valores.includes(buscar);
+
+      const resultado = document.getElementById("resultado");
+      if (encontrado) {
+        resultado.textContent = `El valor ${buscar} se encuentra entre los valores originales.`;
+      } else {
+        resultado.textContent = `El valor ${buscar} NO se encuentra entre los valores originales.`;
+      }
+    }
+  </script>
+</body>
+</html>

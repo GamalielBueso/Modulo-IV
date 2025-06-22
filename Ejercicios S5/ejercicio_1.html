@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Saludo a Nombres</title>
+</head>
+<body>
+  <h1>Ejercicio 1: Saludar a cada nombre</h1>
+  <label for="nombres">Ingrese nombres separados por espacios:</label><br>
+  <input type="text" id="nombres" placeholder="Ej: Ada Greta Grace"><br><br>
+  <button onclick="saludar()">Saludar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function saludar() {
+      const input = document.getElementById("nombres").value.trim();
+      const nombres = input.split(" ");
+      let mensajes = "";
+      for (let nombre of nombres) {
+        if (nombre !== "") {
+          mensajes += `¡Hola ${nombre}!<br>`;
+        }
+      }
+      document.getElementById("resultado").innerHTML = mensajes;
+    }
+  </script>
+</body>
+</html>

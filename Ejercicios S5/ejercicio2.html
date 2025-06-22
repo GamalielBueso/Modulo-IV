@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 2</title>
+</head>
+<body>
+  <h1>Ejercicio 2</h1>
+
+  <label for="valores">Ingrese números separados por espacios:</label><br>
+  <input type="text" id="valores" placeholder="Ej: 5 7 12 34 54 2 1"><br><br>
+
+  <button onclick="encontrarMenor()">Mostrar menor número</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function encontrarMenor() {
+      const entrada = document.getElementById("valores").value.trim();
+      const numeros = entrada.split(" ").map(Number);
+
+      if (numeros.some(isNaN)) {
+        document.getElementById("resultado").textContent = "Por favor, ingrese solo números válidos.";
+        return;
+      }
+
+      const menor = Math.min(...numeros);
+      document.getElementById("resultado").textContent = `El menor número ingresado es: ${menor}`;
+    }
+  </script>
+</body>
+</html>

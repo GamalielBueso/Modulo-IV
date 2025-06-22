@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio 5</title>
+</head>
+<body>
+  <h1>Ejercicio 5</h1>
+
+  <label for="valores">Ingrese valores separados por espacios:</label><br>
+  <input type="text" id="valores" placeholder="Ej: 5 7 12 34 54 2 12"><br><br>
+
+  <label for="buscar">Ingrese valor a buscar:</label><br>
+  <input type="text" id="buscar" placeholder="Ej: 12"><br><br>
+
+  <button onclick="buscarIndice()">Buscar índice</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function buscarIndice() {
+      const valores = document.getElementById("valores").value.trim().split(" ");
+      const buscar = document.getElementById("buscar").value.trim();
+      
+      const indice = valores.indexOf(buscar);
+
+      const resultado = document.getElementById("resultado");
+
+      if (indice !== -1) {
+        resultado.textContent = `El valor ${buscar} se encuentra en el índice ${indice}.`;
+      } else {
+        resultado.textContent = `El valor ${buscar} no se encuentra entre los valores originales.`;
+      }
+    }
+  </script>
+</body>
+</html>
